@@ -1,0 +1,59 @@
+.todoItem {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px;
+  border-radius: 10px;
+  margin: 8px;
+  box-shadow: 0px 1px 3px 0px #f3f3f3;
+}
+.notStarted{
+  border: 2px solid #F3F3F3;
+}
+.completed{
+  border: 2px solid #7AD772;
+}
+.todoInfo {
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+}
+.todoIcon{
+    padding: 10px;
+    border-radius: 50%;
+    color:  #F3F3F3;
+    display: flex;
+    border: 2px solid  #F3F3F3;
+    cursor: pointer;
+}
+.notStarted .todoIcon{
+  background-color: #ffffff;
+}
+.completed .todoIcon{
+  background-color: #7AD772;
+}
+.todoName {
+  margin-left: 20px;
+}
+.ActionBtns{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+.ActionBtns button{
+  border: none;
+  border-radius: 50%;
+  padding: 10px;
+  cursor: pointer;
+  display: flex;
+  gap: 4px;
+}
+.editBtn{
+  background-color: #FFE4C3;
+  color: #5e3504;
+}
+.deleteBtn {
+  background-color: #FFBABA;
+  color: #620202;
+}

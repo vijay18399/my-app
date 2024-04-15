@@ -1,0 +1,111 @@
+.LoginContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(45deg, #4CAF50, #03A9F4);
+  min-height: 100vh;
+}
+
+.LoginCard {
+  background-color: #FFFFFF;
+  border-radius: 30px;
+  width: 780px;
+  margin-top: 30px;
+  min-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.CardImageContainer {
+  padding: 30px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.CardImage {
+  height: 210px;
+  width: 100%;
+}
+.CardSubText{
+  color: #B7B7B7;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  box-shadow: -1px -5px 6px 0px #cfcfcf;
+  width: 100%;
+  padding: 20px;
+  border-radius: 20px;
+  justify-content: center;
+
+}
+
+.inputContainer {
+  margin-bottom: 20px;
+}
+
+.inputContainer label {
+  color: #9E9E9E;
+  font-size: 14px;
+}
+
+.inputContainer input {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  -moz-appearance: textfield;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.container  button {
+  padding: 10px 20px;
+  background-color: #24CCA8;
+  color: #FFFFFF;
+  box-shadow: 0px 0px 10px 2px #cfcfcf;
+  border: none;
+  border-radius: 15px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-left: 10px;
+}
+.CardTitleContainer{
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.CardTitleContainer h3{
+  color: #24CCA8;
+  font-size: 24px;
+}
+.CardTitleContainer span{
+  color: #B7B7B7;
+}
+.OtpInputContainer{
+  display: flex;
+}
+.OtpInputContainer input{
+  background-color: #EDF2F5;
+  color: #434547;
+  width: 55px;
+  height: 55px;
+  padding: 10px 20px;
+  border-radius: 10px;
+  margin: 4px;
+  display: flex;
+
+}
+@media screen and (max-width: 600px) {
+  .LoginCard {
+    width: 90%;
+    margin: 0px 20px;
+  }
+}

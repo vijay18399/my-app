@@ -1,0 +1,26 @@
+.appHeader {
+  background-color: var(--green); /* Change to light blue */
+  color: white; /* Change to dark blue */
+  padding: 10px;
+}
+
+.headerContent {
+  display: flex;
+  align-items: center;
+}
+
+.backLink {
+  text-decoration: none;
+  color: white; /* Change to dark blue */
+  display: flex;
+}
+
+.backIcon {
+  font-size: 28px;
+  margin-right: 10px;
+}
+
+.headerTitle {
+  margin: 0;
+  font-size: 24px;
+}

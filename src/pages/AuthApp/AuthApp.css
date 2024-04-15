@@ -1,94 +1,57 @@
-/* AuthApp.css */
-
-.bg {
+.container {
+    width: 100%;
     height: 100vh;
-    background: linear-gradient(38deg, #9ec535, #a1c5fd);
+    background-color: #F5F6F7;
     display: flex;
     align-items: center;
     justify-content: center;
   }
   
   .card {
-    padding: 20px;
-    background-color: white;
-    border-radius: 20px;
-    display: flex;
-    flex-direction: column;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-    max-width: 400px;
+    margin: 18px;
+    background-color: #ffffff;
+    padding: 25px;
+    border-radius: 10px;
+    max-width: 680px;
     width: 100%;
   }
-  
-  .card h1 {
-    font-weight: 600;
-    font-size: 24px;
-    margin-bottom: 20px;
-    text-align: center;
+  .card h1{
+    margin:12px;
   }
-  
-  .input-group {
+  .loginForm button{
+     margin-top: 20px;
+     background-color: #207BE5;
+     color: white;
+     width: 100%;
+     padding: 10px;
+     border-radius:10px ;
+     cursor: pointer;
+  }
+  .loginForm button:disabled{
+   opacity: 0.65;
+   cursor: not-allowed;
+  }
+  .inputContainer{
     display: flex;
     flex-direction: column;
   }
-  
-  .input-group .input {
-    display: flex;
-    flex-direction: column;
-    margin-top: 15px;
-  }
-  
-  .input-group .input label {
-    margin-bottom: 5px;
-  }
-  
-  .input-group .input input {
+  .inputContainer input{
+    width: 100%;
     padding: 12px;
+    margin-bottom: 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  .error{
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 12px;
     border-radius: 10px;
-    border: 2px solid rgb(216, 215, 215);
-    outline: none;
-    transition: border-color 0.3s ease;
+    background-color: #FDF3F3;
+    color: #EC3F3F;
+    display: flex;
+    align-items: center;
   }
-  
-  .input-group .input input:focus {
-    border-color: #567aea;
+  .error .icon{
+    margin-right: 5px;
   }
-  
-  .card span {
-    text-align: center;
-    color: blueviolet;
-    margin-top: 15px;
-    cursor: pointer;
-  }
-  
-  .card button {
-    background-color: #567aea;
-    color: white;
-    border-radius: 10px;
-    padding: 12px 0;
-    margin-top: 20px;
-    cursor: pointer;
-    border: none;
-    font-size: 16px;
-    font-weight: 600;
-    transition: background-color 0.3s ease;
-  }
-  
-  .card button:disabled {
-    opacity: 0.75;
-    cursor: not-allowed;
-  }
-  
-  .card button:hover {
-    background-color: #345c9e;
-  }
-  
-  /* Error message styling */
-  span.error {
-    color: #FC2F00;
-    font-size: 14px;
-    margin-top: 5px;
-    margin-left: 5px;
-    text-align: left;
-
-  }
-  

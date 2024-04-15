@@ -1,0 +1,152 @@
+.WordInfoCard {
+  padding: 30px;
+  background-color: #FFFFFF;
+  border-radius: 30px;
+  width: 780px;
+  margin-top: 30px;
+}
+
+.WordInfoContainer{
+  display: flex;
+  flex-direction: column;
+  background: #ececec7e;
+  padding: 6px 12px;
+  border-radius: 12px;
+  margin-bottom: 20px;
+}
+
+.CardTitleContainer{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.SearchButton{
+  font-size: 24px;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 600px) {
+  .WordInfoCard {
+    width: 90%;
+    margin: 0px 20px;
+  }
+}
+
+.MeaningsContainer{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding-right: 10px;
+  margin-right: -20px;
+  height: calc(100vh - 280px);
+  overflow: auto;
+  padding-bottom: 25px;
+}
+
+.TitleHeading{
+  font-size: 18px;
+  margin-top: 20px;
+}
+
+.PhoneticsContainer{
+  display: flex;
+  gap: 4px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.NoPhoneticsAvailable{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.NoPhoneticsAvailableImage{
+  width: 80px;
+  height: 80px;
+}
+
+.PhoneticsTitle{
+  color: #1A3C9A;
+}
+.WordPhonetics{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+}
+.PhoneticChipContainer{
+  padding: 4px 12px;
+  border: 1px solid rgb(0 0 0 / 12%);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  font-size: 18px;
+  width: fit-content;
+}
+
+.AudioButton{
+  cursor: pointer;
+  margin-left: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.Word{
+  color: black;
+}
+
+.DefinitionsContainer{
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  flex-direction: column;
+}
+
+.DefinitionChipContainer{
+  padding: 6px 12px;
+  border-radius: 10px;
+  background-color: #94a9fdc6;
+  color: #341542;
+}
+
+.TabContainer {
+  display: flex;
+  flex-direction: column;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.TabsContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.TabButton {
+  padding: 10px 20px;
+  color: #122156;
+  cursor: pointer;
+  border-bottom: 4px solid #efeded;
+}
+
+.ActiveTab{
+  border-bottom: 4px solid #122156;
+}
+
+.TabButton:last-child {
+  border-right: none;
+}
+
+.TabButton:hover {
+  background-color: #ffffff;
+}
+
+.TabInfoContainer {
+  padding: 20px;
+  height: calc(100vh - 280px);
+  padding-bottom: 20px;
+}

@@ -1,4 +1,5 @@
 import React from "react";
+import { MdError } from "react-icons/md";
 import { useForm } from "react-hook-form";
 import "./AuthApp.css";
 
@@ -10,25 +11,22 @@ function AuthApp() {
   };
 
   return (
-    <div className="bg">
+    <div className="container">
       <div className="card">
         <h1>Register Here!</h1>
-        <form onSubmit={handleSubmit(onSubmit)}>
-          <div className="input-group">
-            <div className="input">
-              <label htmlFor="email">Email Address</label>
+        <form className="loginForm" onSubmit={handleSubmit(onSubmit)}>
+          <div className="inputContainer">
+            <div className="inputDiv">
               <input {...register("email", { required: true })} placeholder="Enter Email" type="email" />
-              {errors.email && <span className="error">Email is required</span>}
+              {errors.email && <div className="error"> <MdError className="icon" />Email is required</div>}
             </div>
-            <div className="input">
-              <label htmlFor="phoneNumber">Mobile Number</label>
+            <div className="inputDiv">
               <input {...register("phoneNumber", { required: true, minLength: 10, maxLength: 10 })} placeholder="Enter Mobile Number" type="number" />
-              {errors.phoneNumber && <span className="error">Mobile number should be 10 digits</span>}
+              {errors.phoneNumber && <div className="error">  <MdError className="icon" /> Mobile number should be 10 digits</div>}
             </div>
-            <div className="input">
-              <label htmlFor="password">Password</label>
+            <div className="inputDiv">
               <input {...register("password", { required: true, minLength: 6 })} placeholder="Enter Password" type="password" />
-              {errors.password && <span className="error">Password should be at least 6 characters</span>}
+              {errors.password && <div className="error">  <MdError className="icon" /> Password should be at least 6 characters</div>}
             </div>
           </div>
           <button type="submit">Register</button>

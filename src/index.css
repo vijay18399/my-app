@@ -1,18 +1,126 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-body {
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  padding: 0px;
+  margin: 0px;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
 }
 
 
+ul[class],
+ol[class] {
+  padding: 0;
+}
+
+body {
+  min-height: 100vh;
+  scroll-behavior: smooth;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+ul[class],
+ol[class] {
+  list-style: none;
+}
+
+
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+a{
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+
+input,
+select,
+textarea {
+  border: none;
+  outline: none;
+}
+
+
+button {
+  background: none;
+  border: none;
+  padding: 0;
+}
+
+body{
+  background-color: #F5F6F7;
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+:root {
+  --primary-color: #214360;
+  --secondary-color: #254763;
+  --border-color: #EEF1F3;
+  --light-blue: #c1ddf6; /* Light Blue color */
+  --dark-blue: #073964; /* Dark Blue color */
+  --hover-color: #1171C9;
+  --accent-color: #FFA500;
+  --background-color: #F8F8F8;
+  --text-color: #333333;
+  --green: #7AD772; 
+  --orange: #FFA500;
+  --blue: #0000FF; 
+  --purple: #800080; 
+  --pink: #FFC0CB; 
+  --red: #FF0000; 
+  --yellow: #FFFF00; 
+  --teal: #008080;
+  --cyan: #00FFFF; 
+  --brown: #A52A2A;
+
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+::-webkit-scrollbar {
+  width: 10px; 
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #888; 
+  border-radius: 5px; 
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #555; 
+}
+
+::-webkit-scrollbar-track {
+  background-color: #f0f0f0; 
+}

@@ -1,0 +1,41 @@
+.title {
+  color: white;
+  margin-bottom: 14px;
+}
+
+.searchBar {
+  display: flex;
+  align-items: center;
+  min-width: 480px;
+  margin: 0 auto;
+  position: relative;
+}
+
+@media screen and (max-width: 600px) {
+  .searchBar {
+    min-width: 90%;
+  }
+}
+
+.input {
+  padding: 12px 30px;
+  border: 1px solid #ccc;
+  border-radius: 30px;
+  outline: none;
+  width: 100%;
+  padding-right: 40px;
+  color: #73878C;
+}
+
+.icon {
+  position: absolute;
+  color: #0F3039;
+  font-weight: 600;
+  border: none;
+  font-size: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  right: 12px;
+  top: 8px;
+}
