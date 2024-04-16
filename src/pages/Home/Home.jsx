@@ -88,7 +88,7 @@ const apps = [
 const Main = () => {
   const handleAppClick = (path, status) => {
     if (status === "completed" || status === "wip") {
-      window.open(`/#/${path}`, "_blank");
+      window.open(`/#/${path}`, "_self");
     } else {
       toast.warning("This app is under construction. Stay tuned for updates!");
     }
