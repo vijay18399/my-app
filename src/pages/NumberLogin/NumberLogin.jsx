@@ -1,40 +1,70 @@
 import React, { Component } from "react";
 import styles from "./NumberLogin.module.css";
 import svgImage from "../../assets/otp.svg";
-
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 class NumberLogin extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      pageState: "otp",
+      pageState: "login",
+      phoneNumber: "",
       otpLength: 4,
       otp: new Array(4).fill(""),
       focusedIndex: 0,
+      disableLoginBtn:true,
     };
+    this.inputRefs = Array.from({ length: 4 }, () => React.createRef());
   }
 
+  handleChange(value, index) {
+    const { otp } = this.state;
+    otp[index] = value[0] ? value[0] : "";
 
-   handleChange(value, index) {
+    this.setState({ otp ,disableLoginBtn : otp.join("").length !==4 });
+    if (value && index + 1 < this.inputRefs.length) {
+      this.inputRefs[index + 1].current.focus();
+    }
   }
 
   handleBackspaceAndEnter(e, index) {
-    if(e.key === "Backspace" && !e.target.value && index > 0){
-      
+    const { otpLength } = this.state;
+    if (e.key === "Backspace" && !e.target.value && index > 0) {
+      this.inputRefs[index - 1].current.focus();
     }
-    if(e.key === "Enter" && e.target.value && index < this.state.otpLength-1){
-      
+    if (e.key === "Enter" && e.target.value && index < otpLength - 1) {
+      this.inputRefs[index + 1].current.focus();
+    }
+  }
+  login(){
+    toast.error("Invalid OTP");
+  }
+  sendOtp() {
+    if (this.isValidPhoneNumber(this.state.phoneNumber)) {
+      this.setState({ pageState: "otp" });
+    } else {
+      toast.error("Please enter a valid phone number.");
     }
   }
 
+  isValidPhoneNumber(phoneNumber) {
+    return phoneNumber.length === 10;
+  }
+
   render() {
-    const { pageState, otpLength, otp } = this.state;
+    const { pageState, otpLength, otp,disableLoginBtn, phoneNumber } = this.state;
     return (
       <div className={styles.LoginContainer}>
+        <ToastContainer />
         <div className={styles.LoginCard}>
           {pageState === "login" && (
             <>
               <div className={styles.CardImageContainer}>
-                <img className={styles.CardImage} src={svgImage} alt={pageState} />
+                <img
+                  className={styles.CardImage}
+                  src={svgImage}
+                  alt={pageState}
+                />
               </div>
               <div className={styles.CardSubText}>
                 You'll receive a {otpLength} digit code to verify next
@@ -42,9 +72,22 @@ class NumberLogin extends Component {
               <div className={styles.container}>
                 <div className={styles.inputContainer}>
                   <label htmlFor="phonenumber">Enter your mobile number</label>
-                  <input type="number" name="phonenumber" />
+                  <input
+                    type="number"
+                    name="phonenumber"
+                    value={phoneNumber}
+                    onChange={(e) =>
+                      this.setState({ phoneNumber: e.target.value })
+                    }
+                  />
                 </div>
-                <button>Continue</button>
+                <button
+                  onClick={() => {
+                    this.sendOtp();
+                  }}
+                >
+                  Continue
+                </button>
               </div>
             </>
           )}
@@ -56,22 +99,27 @@ class NumberLogin extends Component {
               </div>
               <div className={styles.OtpContainer}>
                 <div className={styles.CardSubText}>
-                  Code is sent to +90 6500450403
+                  Code is sent to {phoneNumber}
                 </div>
                 <div className={styles.OtpInputContainer}>
                   {otp.map((digit, index) => (
                     <input
-                    key={index} 
-                    maxLength={1}  
-                    onChange={(e)=> this.handleChange(e.target.value, index)}
-                    onKeyUp={(e)=> this.handleBackspaceAndEnter(e, index)}
-                   
+                      type="number"
+                      key={index}
+                      maxLength={1}
+                      ref={this.inputRefs[index]}
+                      id={index}
+                      value={digit}
+                      onChange={(e) => this.handleChange(e.target.value, index)}
+                      onKeyUp={(e) => this.handleBackspaceAndEnter(e, index)}
                     />
                   ))}
                 </div>
               </div>
               <div className={styles.container}>
-                <button>Login</button>
+                <button    onClick={() => {
+                    this.login();
+                  }} disabled={disableLoginBtn} >Login</button>
               </div>
             </>
           )}

@@ -12,7 +12,8 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { FaShoppingCart } from "react-icons/fa";
 import { FaBlog } from "react-icons/fa";
-
+import { Link } from 'react-router-dom';
+import { FaReact } from "react-icons/fa";
 import styles from "./Home.module.css";
 
 const apps = [
@@ -66,41 +67,21 @@ const apps = [
     description: "OTP inputs implementation"
   },
   {
-    name: "Blog App",
-    path: "blog-app",
-    icon: <FaBlog />,
-    description: "A blog application for reading, writing, and interacting with posts."
+    name: "React Challenges",
+    path: "challenges",
+    icon: <FaReact />,
+    description: "An app for solving React challenges."
   },
-  {
-    name: "E-commerce App",
-    path: "e-commerce-app",
-    icon: <FaShoppingCart />,
-    description: "An e-commerce platform for buying and selling products online."
-  },
-  {
-    name: "Chat App",
-    path: "chat-app",
-    icon: <IoIosChatboxes />,
-    description: "A real-time chat application for communicating with others."
-  }
 ];
 
 const Main = () => {
-  const handleAppClick = (path, status) => {
-    if (status === "completed" || status === "wip") {
-      window.open(`/#/${path}`, "_self");
-    } else {
-      toast.warning("This app is under construction. Stay tuned for updates!");
-    }
-  };
-
   return (
     <div className={styles.card}>
       <ToastContainer/>
       <h3 className={styles.title}>My React Apps</h3>
       <div className={styles.appList}>
         {apps.map((app, index) => (
-          <div className={styles.appItem} key={index} onClick={() => handleAppClick(app.path, app.status)}>
+          <Link to={app.path} key={index} className={styles.appItem}>
             <div className={styles.appInfo}>
               <span className={styles.appIcon}>{app.icon}</span>
               <div className={styles.appData}>
@@ -109,12 +90,13 @@ const Main = () => {
               </div>
             </div>
             <FaChevronRight />
-          </div>
+          </Link>
         ))}
       </div>
     </div>
   );
 };
+
 
 
 export default Main;
